@@ -25,7 +25,20 @@ const App = () => {
   console.log('users', users);
   return (
     <div>
-      {users ? (users.map(user => <h4 key={user.id}> {user.name} </h4>)) : <p> Loading... </p>}
+      {users ? 
+      (users.map(user => 
+      <div>
+        <div className='userName'>
+          <h3> User </h3>
+          <h4 key={user.id}> {user.name} </h4>
+          <p> {user.username} </p>
+        </div>
+        <div className='details'>
+          <div>email: {user.email} </div> 
+          <div>address:  </div>
+        </div>
+      </div> )) 
+      : <p> Loading... </p>}
     </div>
   )
 }
