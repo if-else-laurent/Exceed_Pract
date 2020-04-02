@@ -1,1 +1,61 @@
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
 
+ h4, h5 {
+    color: orange;
+
+}
+
+.USER {
+    border: solid;
+    width: 800px;
+    background-color: rgb(50, 61, 61);
+    color: white;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: solid orange;
+}
+
+.header__item   {
+    margin: 0 10px;
+}
+
+.header__avatar img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.header__email  {
+    color: orange;
+}
+
+.orange {
+    color: orange;
+}
+
+
+
+.about {
+    border: black solid;
+    padding: 10px;
+}
+
+.about__header    {
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.527);
+}
+
+.about__inner {
+    display: flex;
+}
+
+.about__inner__item {
+    margin: 0 5px;
+}
