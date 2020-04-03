@@ -5,6 +5,7 @@ import UserCard from './components/userCard/UserCard';
 
 const App = () => {
   const [users, setUsers] = useState(null);
+  const [resSearch, setResSearch] = useState('');
 
 
   useEffect(() => {                                             // Разобраться с этим блоком
@@ -16,10 +17,27 @@ const App = () => {
       )
   }, []);
 
+
   console.log('users', users);
   return (
     <div>
-      {users ? (users.map(user => <UserCard key={user.id} user={user} />)) : <p> Loading... </p>}
+      <div className='search'>
+        <input type='text' onChange={(e) => setResSearch(e.target.value)} />
+      </div>
+      {users ?
+        (users.map(user => {
+          if (resSearch == '') {
+            return (
+              <UserCard key={user.id} user={user} />
+            )
+          } else if ((user.name).includes(resSearch)) {
+            return (
+              <UserCard key={user.id} user={user} />
+            )
+          }
+        }
+        ))
+        : <p> Loading... </p>}
     </div>
   )
 }
