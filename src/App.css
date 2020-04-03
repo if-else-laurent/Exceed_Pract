@@ -2,16 +2,41 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
- h4, h5 {
+ h1, h2, h3, h4, h5, h6 {
     color: orange;
-
 }
 
-.USER {
+body {
+    color: white;
+}
+
+.USER__search  {
+    background-color: rgb(50, 61, 61);
+    padding: 20px;
+    width: 800px;
+    border: solid;
+}
+
+.search__inner {
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 10px;
+}
+
+.search__header {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-bottom: orange solid;
+    background-color: rgba(0, 0, 0, 0.527);
+}
+
+.search__inner__input   {
+    border:  solid ;
+}
+
+.USER__card {
     border: solid;
     width: 800px;
     background-color: rgb(50, 61, 61);
-    color: white;
     padding: 20px;
 
 }

@@ -13,7 +13,7 @@ const UserCard = (props) => {
     address,
   } } = props;
   return (
-    <div className='USER'>
+    <div className='USER__card'>
       <Header avatar={avatar} name={name} userName={username} email={email} />
       <div className='about'>
         <h3 className="about__header orange">Information about </h3>
