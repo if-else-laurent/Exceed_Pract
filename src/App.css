@@ -79,7 +79,8 @@ body {
 }
 
 .about__inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .about__inner__item {

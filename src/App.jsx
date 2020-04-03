@@ -22,9 +22,6 @@ const App = () => {
   console.log('users', users);
   return (
     <div>
-      {/* <div className='search'>
-        <input type='text' onChange={(e) => setResSearch(e.target.value)} />
-      </div> */}
       <SearchUser setResSearch={setResSearch} />
       {users ?
         (users.map(user => {
@@ -46,8 +43,3 @@ const App = () => {
 }
 
 export default App
-
-
-
-
-
