@@ -10,10 +10,20 @@ body {
     color: white;
 }
 
+.user__container  {
+    width: 850px;
+}
+
+.orange {
+    color: orange;
+}
+    
+/* USER__LIST________________________________________ */
+
+
 .USER__search  {
     background-color: rgb(50, 61, 61);
     padding: 20px;
-    width: 800px;
     border: solid;
 }
 
@@ -33,9 +43,9 @@ body {
     border:  solid ;
 }
 
+
 .USER__card {
     border: solid;
-    width: 800px;
     background-color: rgb(50, 61, 61);
     padding: 20px;
 
@@ -53,7 +63,7 @@ body {
     margin: 0 10px;
 }
 
-.header__avatar img {
+.headerCard__avatar img {
     width: 60px;
     border-radius: 50%;
 }
@@ -62,11 +72,56 @@ body {
     color: orange;
 }
 
-.orange {
-    color: orange;
+.USER__notFound   {
+    background-color: rgb(50, 61, 61);
+    font-size: 20px;
+    border: solid;
+    padding: 20px;
+}
+
+.USER__notFound__inner  {
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 10px;
 }
 
 
+
+
+
+
+
+/* USER__PAGE_____________________________________________________*/
+
+
+.user__page {
+    background-color: rgb(50, 61, 61);
+    border: solid;
+    /* padding: 20px; */
+}
+
+.user__page__inner  {
+    margin: 20px;
+}
+
+.header__page   {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: solid orange;
+    position: relative;
+}
+
+.headerPage__avatar img {
+    width: 250px;
+    border-radius: 5%;
+}
+
+.user__page__buttonReturn  {
+    font-size: 16px;
+    right: 15px;
+    position: absolute;
+}
 
 .about {
     border: black solid;
@@ -86,3 +141,6 @@ body {
 .about__inner__item {
     margin: 0 5px;
 }
+
+
+/*___________________________*/

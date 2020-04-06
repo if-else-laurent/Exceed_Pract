@@ -1,24 +1,19 @@
 import React from 'react';
-import Header from '../header/Header';
-import About from '../about/About';
+import HeaderCard from '../headerCard/HeaderCard';
 
 const UserCard = (props) => {
   const { user: {
+    id,
     avatar,
     name,
     username,
-    email,
-    phone,
-    website,
-    company,
-    address,
+    email
   } } = props;
   return (
     <div className='USER__card'>
-      <Header avatar={avatar} name={name} userName={username} email={email} />
-      <About phone={phone} website={website} company={company} address={address} />
+      <HeaderCard id={id} avatar={avatar} name={name} userName={username} email={email} />
     </div>)
 
 }
 
-export default UserCard
+export default UserCard;

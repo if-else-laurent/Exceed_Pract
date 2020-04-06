@@ -2,7 +2,7 @@ import React from 'react';
 import Contacts from './contacts/Contacts';
 import Company from './company/Company';
 import Address from './address/Address';
-import Geo from './Geo/Geo';
+import Geo from './geo/Geo';
 
 const About = (props) => {
   const {
