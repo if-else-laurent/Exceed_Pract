@@ -19,13 +19,12 @@ const App = () => {
       )
   }, []);
 
-
-  const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));
-  console.log(filtredUsers);
+  const deleteUser = (id) => { setUsers(users.filter(parametr => parametr.id !== id)) };  //Удаление пользователя
+  const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
   return (
     <BrowserRouter>
       <div className='user__container'>
-        <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} />
+        <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} deleteUser={deleteUser} />
         <UserPage filtredUsers={filtredUsers} setResSearch={setResSearch} />
       </div>
     </BrowserRouter>

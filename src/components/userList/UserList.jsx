@@ -5,14 +5,14 @@ import UserCard from '../userCard/UserCard';
 import NotFound from '../notFound/NotFound';
 
 const UserList = (props) => {
-  const { users, filtredUsers, setResSearch } = props;
+  const { users, filtredUsers, setResSearch, deleteUser } = props;
   return (
     <div className='user__list'>
       <Route exact path='/'>
         <SearchUser setResSearch={setResSearch} />
         {users ? (
           filtredUsers.length ? (
-            filtredUsers.map((user) => <UserCard key={user.id} user={user} />)
+            filtredUsers.map((user) => <UserCard key={user.id} deleteUser={deleteUser} user={user} />)
           ) : (<NotFound />)
         ) : (<p> Loading... </p>)}
       </Route>
@@ -20,4 +20,4 @@ const UserList = (props) => {
   )
 }
 
-export default UserList
+export default UserList;

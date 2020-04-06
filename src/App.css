@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
- h1, h2, h3, h4, h5, h6 {
+ h1, h2, h4, h5, h6 {
     color: orange;
 }
 
@@ -57,6 +57,7 @@ body {
     padding: 10px;
     font-size: 18px;
     border-bottom: solid orange;
+    position: relative;
 }
 
 .header__item   {
@@ -70,6 +71,12 @@ body {
 
 .header__email  {
     color: orange;
+}
+
+.headerCard__deleteButton   {
+    position: absolute;
+    right: 12px;
+    top: 10px;
 }
 
 .USER__notFound   {
