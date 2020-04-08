@@ -1,12 +1,12 @@
 import React from 'react'
 
 const RouteTest = (props) => {
-  console.log(props.match.params.id)
+  console.log('RouteID', props.match.params.id)
   const users = [
-    { name: 'Leanne', id: 1, bb: 3 },
-    { name: 'Ervin', id: 2, bb: 2 },
-    { name: 'Clementine', id: 3, bb: 1 },
-    { name: 'Patricia', id: 4, bb: 4 },
+    { name: 'Leanne', id: 1 },
+    { name: 'Ervin', id: 2 },
+    { name: 'Clementine', id: 3 },
+    { name: 'Patricia', id: 4 },
   ];
 
   return (

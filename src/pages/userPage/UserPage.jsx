@@ -1,24 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import About from '../../components/about/About'
 import HeaderPage from '../../components/headerPage/HeaderPage';
 
 const UserPage = (props) => {
-  // const { filtredUsers, setResSearch } = props;
-  const [users, setUsers] = useState([]);
-  const [resSearch, setResSearch] = useState('');
+  const {
+    filtredUsers,
+    setResSearch,
+    match,
+  } = props;
 
-  useEffect(() => {                                             // Разобраться с этим блоком
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
-      .then(res => {
-        console.log('Result', res.data);
-        setUsers(res.data);
-      }
-      )
-  }, []);
-
-  const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
-  const userPage = filtredUsers.filter((user) => user.id == props.match.params.id);
+  const userPage = filtredUsers.filter((user) => user.id == match.params.id);
 
   return (
     <div className='user__page'>

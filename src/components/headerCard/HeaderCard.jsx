@@ -18,9 +18,9 @@ const Header = (props) => {
           <NavLink className='orange' to={'/' + user.id}>
             More
           </NavLink>
-          <a className='orange headerCard__deleteButton' href='#' onClick={() => { deleteUser(user.id) }}>
-            close
-          </a>
+          <NavLink className='orange headerCard__deleteButton' to='/' onClick={() => deleteUser(user.id)}>
+            delete
+          </NavLink>
         </div>
       </header>
     </div>
