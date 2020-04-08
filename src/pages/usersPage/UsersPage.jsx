@@ -6,8 +6,6 @@ const UsersPage = (props) => {
   const [users, setUsers] = useState([]);
   const [resSearch, setResSearch] = useState('');
 
-  console.log('props', props);
-
   useEffect(() => {                                             // Разобраться с этим блоком
     axios.get(`https://jsonplaceholder.typicode.com/users`)
       .then(res => {

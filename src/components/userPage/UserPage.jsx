@@ -1,3 +1,4 @@
+// import React from 'react';
 import React from 'react';
 import { Route } from 'react-router-dom';
 import About from '../about/About'
@@ -5,6 +6,7 @@ import HeaderPage from '../headerPage/HeaderPage';
 
 const UserPage = (props) => {
   const { filtredUsers, setResSearch } = props;
+
   return (
     <div className='user__page'>
       {filtredUsers.map((user) => {
