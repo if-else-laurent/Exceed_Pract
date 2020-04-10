@@ -10,7 +10,7 @@ body {
     color: white; 
 }
 
-.user__container  {
+.mainPage  {
     width: 850px;
 }
 
@@ -21,11 +21,39 @@ body {
 /* USER__LIST________________________________________ */
 
 
-.USER__search  {
+.user__search  {
     background-color: rgb(50, 61, 61);
     padding: 20px;
     border: solid;
 }
+
+/* .user__add {
+    background-color: rgb(50, 61, 61);
+    padding: 20px;
+    border: solid;
+}
+
+.user__addHeader    {
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: orange solid;
+}
+
+.user__addInner {
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 10px;
+    position: relative;
+}
+
+.addUser__button    {
+    padding: 2px;
+    text-decoration: none;
+    border: solid;
+    position: absolute;
+    right: 5px;
+    top:5px;
+} */
 
 .search__inner {
     background-color: rgba(0, 0, 0, 0.527);

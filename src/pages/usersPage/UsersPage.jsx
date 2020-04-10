@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import UserList from '../../components/userList/UserList';
 
 const UsersPage = (props) => {
-  console.log('props', props);
   const {
     users,
     filtredUsers,
     setResSearch,
     deleteUser,
+    addUser,
   } = props;
 
 
   return (
-    <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} deleteUser={deleteUser} />
+    <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} deleteUser={deleteUser} addUser={addUser} />
   )
 }
 

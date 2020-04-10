@@ -8,7 +8,6 @@ const HeaderPage = (props) => {
     name,
     username,
     email,
-    setResSearch,
   } = props;
   return (
     <header className='header__page'>
@@ -21,7 +20,7 @@ const HeaderPage = (props) => {
           email: <a className='header__email' href='#'>{email}</a>
         </div>
       </div>
-      <NavLink className='user__page__buttonReturn orange' to='/' onClick={() => setResSearch('')}>
+      <NavLink className='user__page__buttonReturn orange' to='/'>
         Return
       </NavLink>
     </header>

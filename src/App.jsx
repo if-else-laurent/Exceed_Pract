@@ -21,14 +21,20 @@ const App = () => {
       )
   }, []);
 
+  const addUser = (user) => {
+    if (user.name !== null) {
+      user.id = users.length + 1;
+      setUsers([...users, user]);
+    }
+  };
   const deleteUser = (id) => setUsers(users.filter((parametr) => parametr.id !== id));  //Удаление пользователя
   const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
 
   return (
     <Router>
-      <div className='user__container'>
-        <Route path='/' render={(props) => <UsersPage {...props} users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} deleteUser={deleteUser} />} />
-        <Route path='/:id' render={(props) => <UserPage {...props} filtredUsers={filtredUsers} setResSearch={setResSearch} />} />
+      <div className='mainPage'>
+        <Route path='/' render={(props) => <UsersPage {...props} users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} deleteUser={deleteUser} addUser={addUser} />} />
+        <Route path='/:id' render={(props) => <UserPage {...props} users={users} />} />
         {/* <Route path='/:id' component={RouteTest} /> */}
       </div>
     </Router>
