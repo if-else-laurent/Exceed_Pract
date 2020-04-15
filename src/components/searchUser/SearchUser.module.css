@@ -1,0 +1,17 @@
+.container  {
+  background-color: rgb(50, 61, 61);
+  padding: 20px;
+  border: solid;
+}
+
+.header {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: orange solid;
+  background-color: rgba(0, 0, 0, 0.527);
+}
+
+.container__inner {
+  background-color: rgba(0, 0, 0, 0.527);
+  padding: 10px;
+}

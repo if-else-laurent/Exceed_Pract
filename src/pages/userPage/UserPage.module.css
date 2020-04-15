@@ -1,0 +1,11 @@
+.container {
+  background-color: rgb(50, 61, 61);
+  border: solid;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.inner  {
+  margin: 20px;
+
+}
