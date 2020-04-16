@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import UserList from '../../components/userList/UserList';
 
 const UsersPage = (props) => {
@@ -6,13 +6,12 @@ const UsersPage = (props) => {
     users,
     filtredUsers,
     setResSearch,
-    deleteUser,
     addUser,
   } = props;
 
 
   return (
-    <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} deleteUser={deleteUser} addUser={addUser} />
+    <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} addUser={addUser} />
   )
 }
 

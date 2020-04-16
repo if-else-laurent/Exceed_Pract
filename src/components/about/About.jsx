@@ -3,6 +3,7 @@ import Contacts from './contacts/Contacts';
 import Company from './company/Company';
 import Address from './address/Address';
 import Geo from './geo/Geo';
+import AboutStyle from './About.module.css';
 
 const About = (props) => {
   const {
@@ -12,9 +13,9 @@ const About = (props) => {
     address,
   } = props;
   return (
-    <div className='about'>
-      <h3 className="about__header orange">Information </h3>
-      <div className='about__inner'>
+    <div className={AboutStyle.container}>
+      <h3 className={`${AboutStyle.header} orange`}>Information </h3>
+      <div className={AboutStyle.inner}>
         <Contacts phone={phone} website={website} />
         <Company company={company} />
         <Address address={address} />

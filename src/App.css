@@ -11,7 +11,7 @@ body {
 }
 
 .mainPage  {
-    width: 850px;
+    width: 1500px;
 }
 
 .orange {
@@ -21,11 +21,11 @@ body {
 /* USER__LIST________________________________________ */
 
 
-.user__search  {
+/* .user__search  {
     background-color: rgb(50, 61, 61);
     padding: 20px;
     border: solid;
-}
+} */
 
 /* .user__add {
     background-color: rgb(50, 61, 61);
@@ -55,7 +55,7 @@ body {
     top:5px;
 } */
 
-.search__inner {
+/* .search__inner {
     background-color: rgba(0, 0, 0, 0.527);
     padding: 10px;
 }
@@ -69,10 +69,10 @@ body {
 
 .search__inner__input   {
     border:  solid ;
-}
+} */
 
 
-.USER__card {
+/* .USER__card {
     border: solid;
     background-color: rgb(50, 61, 61);
     padding: 20px;
@@ -105,9 +105,9 @@ body {
     position: absolute;
     right: 12px;
     top: 10px;
-}
+} */
 
-.USER__notFound   {
+/* .USER__notFound   {
     background-color: rgb(50, 61, 61);
     font-size: 20px;
     border: solid;
@@ -117,7 +117,7 @@ body {
 .USER__notFound__inner  {
     background-color: rgba(0, 0, 0, 0.527);
     padding: 10px;
-}
+} */
 
 
 
@@ -127,11 +127,10 @@ body {
 
 /* USER__PAGE_____________________________________________________*/
 
-
+/* 
 .user__page {
     background-color: rgb(50, 61, 61);
     border: solid;
-    /* padding: 20px; */
 }
 
 .user__page__inner  {
@@ -156,9 +155,9 @@ body {
     font-size: 16px;
     right: 15px;
     position: absolute;
-}
+} */
 
-.about {
+/* .about {
     border: black solid;
     padding: 10px;
 }
@@ -175,7 +174,7 @@ body {
 
 .about__inner__item {
     margin: 0 5px;
-}
+} */
 
 
 /*___________________________*/

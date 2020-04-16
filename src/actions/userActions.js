@@ -1,4 +1,4 @@
-import { FETCH_USERS } from './types'
+import { FETCH_USERS, DELETE_USER, ADD_USER } from './types'
 
 export const fetchUsers = () => (dispatch) => {
   console.log('fetch')
@@ -11,3 +11,18 @@ export const fetchUsers = () => (dispatch) => {
       })
     );
 };
+
+export const deleteUser = (id) => {
+  return {
+    type: DELETE_USER,
+    payload: id,
+  }
+}
+
+export const addUser = (newUser) => {
+  console.log(newUser)
+  return {
+    type: ADD_USER,
+    payload: newUser,
+  }
+} 
