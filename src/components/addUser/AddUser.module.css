@@ -14,17 +14,17 @@
 .inner {
   background-color: rgba(0, 0, 0, 0.527);
   padding: 10px;
-  position: relative;
 }
 
 .button    {
   padding: 2px;
   text-decoration: none;
   border: solid;
-  position: absolute;
   right: 5px;
   top:6px;
   color: orange;
+  background-color: black;
+  margin-left: 10px;
 }
 
 .button:hover {

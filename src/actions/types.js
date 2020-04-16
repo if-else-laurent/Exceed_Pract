@@ -1,3 +1,5 @@
 export const FETCH_USERS = 'FETCH_USERS';
+export const BEGIN_LOAD_FETCH_USERS = 'BEGIN_LOAD_FETCH_USERS';
+export const ERROR_LOAD_FETCH_USERS = 'ERROR_LOAD_FETCH_USERS';
 export const DELETE_USER = 'DELETE_USERS';
 export const ADD_USER = 'ADD_USER';

@@ -10,11 +10,12 @@ import { fetchUsers, } from '../src/actions/userActions';
 
 
 const App = (props) => {
-  const { users, fetchUsers } = props;
+  const { users, fetchUsers, loading } = props;
 
   useEffect(() => {                                             // Разобраться с этим блоком
     fetchUsers();
   }, []);
+  console.log(loading)
 
   const [resSearch, setResSearch] = useState('');
 
@@ -31,9 +32,10 @@ const App = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  users: state.user.users
+  users: state.userReducer.users,
+  loading: state.userReducer.loading
 })
 
 const mapActions = { fetchUsers };
 
-export default connect(mapStateToProps, mapActions)(App);
+export default connect(mapStateToProps, mapActions)(App); // Connect(props, откуда props)(component который подключаеться)

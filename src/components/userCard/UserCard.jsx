@@ -3,11 +3,11 @@ import HeaderCard from '../headerCard/HeaderCard';
 import UserCardStyle from './UserCard.module.css';
 
 const UserCard = (props) => {
-  const { user, deleteUser } = props;
+  const { user } = props;
 
   return (
     <div className={UserCardStyle.container}>
-      <HeaderCard deleteUser={deleteUser} user={user} />
+      <HeaderCard user={user} />
     </div>)
 
 }

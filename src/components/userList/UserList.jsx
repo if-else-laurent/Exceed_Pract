@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SearchUser from '../searchUser/SearchUser';
 import UserCard from '../userCard/UserCard';
 import NotFound from '../notFound/NotFound';
@@ -14,6 +14,11 @@ const UserList = (props) => {
       <SearchUser setResSearch={setResSearch} />
       <AddUser />
       <div className={UserListStyle.container}>
+        {/* {users ? (
+          filtredUsers.length ? (
+            filtredUsers.map((user) => <UserCard key={user.id} user={user} />)
+          ) : (<NotFound />)
+        ) : (<p> Loading... </p>)} */}
         {users ? (
           filtredUsers.length ? (
             filtredUsers.map((user) => <UserCard key={user.id} user={user} />)

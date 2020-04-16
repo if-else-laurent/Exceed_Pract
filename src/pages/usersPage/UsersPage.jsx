@@ -6,12 +6,11 @@ const UsersPage = (props) => {
     users,
     filtredUsers,
     setResSearch,
-    addUser,
   } = props;
 
 
   return (
-    <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} addUser={addUser} />
+    <UserList users={users} filtredUsers={filtredUsers} setResSearch={setResSearch} />
   )
 }
 
