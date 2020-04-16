@@ -7,11 +7,11 @@ import UserListStyle from './UserList.module.css';
 
 
 const UserList = (props) => {
-  const { users, filtredUsers, setResSearch } = props;
+  const { filtredUsers } = props;
 
   return (
     <div>
-      <SearchUser setResSearch={setResSearch} />
+      <SearchUser />
       <AddUser />
       <div className={UserListStyle.container}>
         {/* {users ? (
@@ -19,11 +19,13 @@ const UserList = (props) => {
             filtredUsers.map((user) => <UserCard key={user.id} user={user} />)
           ) : (<NotFound />)
         ) : (<p> Loading... </p>)} */}
-        {users ? (
+        {/* {users ? (
           filtredUsers.length ? (
             filtredUsers.map((user) => <UserCard key={user.id} user={user} />)
           ) : (<NotFound />)
-        ) : (<p> Loading... </p>)}
+        ) : (<p> Loading... </p>)} */}
+
+        {filtredUsers.length ? (filtredUsers.map((user) => <UserCard key={user.id} user={user} />)) : (<NotFound />)}
       </div>
     </div>
   )

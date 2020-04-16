@@ -10,21 +10,20 @@ import { fetchUsers, } from '../src/actions/userActions';
 
 
 const App = (props) => {
-  const { users, fetchUsers, loading } = props;
+  const { users, filtredUsers, fetchUsers } = props;
 
   useEffect(() => {                                             // Разобраться с этим блоком
     fetchUsers();
   }, []);
-  console.log(loading)
 
-  const [resSearch, setResSearch] = useState('');
+  // const [resSearch, setResSearch] = useState('');
 
-  const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
+  // const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
 
   return (
     <Router>
       <div className='mainPage'>
-        <Route exact path='/' render={(props) => <UsersPage {...props} setResSearch={setResSearch} users={users} filtredUsers={filtredUsers} />} />
+        <Route exact path='/' render={(props) => <UsersPage {...props} filtredUsers={filtredUsers} />} />
         <Route exact path='/:id' render={(props) => <UserPage {...props} users={users} />} />
       </div>
     </Router>
@@ -33,7 +32,8 @@ const App = (props) => {
 
 const mapStateToProps = (state) => ({
   users: state.userReducer.users,
-  loading: state.userReducer.loading
+  loading: state.userReducer.loading,
+  filtredUsers: state.userReducer.filtredUsers,
 })
 
 const mapActions = { fetchUsers };
