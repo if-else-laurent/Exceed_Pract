@@ -5,8 +5,9 @@ import { addUser } from '../../actions/userActions';
 
 
 
-const AddUser = (props) => {
+const AddUser = () => {
   const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
 
   const dispatch = useDispatch();
@@ -16,8 +17,7 @@ const AddUser = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name && email) {
-      const id = Math.random() * 10;
-      dispatch(addUser({ id, name, email }));
+      dispatch(addUser({ name, username, email }));
     }
     return
   }
@@ -30,6 +30,8 @@ const AddUser = (props) => {
         <form onSubmit={handleSubmit}>
           <label htmlFor='name'> Name: </label>
           <input type='text' name='name' onChange={(e) => setName(e.target.value)} />
+          <label htmlFor='email'> Username: </label>
+          <input type='text' name='username' onChange={(e) => setUsername(e.target.value)} />
           <label htmlFor='email'> Email: </label>
           <input type='email' name='email' onChange={(e) => setEmail(e.target.value)} />
           <button className={AddUserStyle.button}> Add User </button>

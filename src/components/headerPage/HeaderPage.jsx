@@ -1,6 +1,6 @@
 import React from 'react';
 import UserAvatar from '../userAvatar/UserAvatar';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import HeaderPageStyle from './HeaderPage.module.css';
 
 const HeaderPage = (props) => {
@@ -21,9 +21,9 @@ const HeaderPage = (props) => {
           email: <a className='orange' href='#'>{email}</a>
         </div>
       </div>
-      <NavLink className={`${HeaderPageStyle.buttonReturn} orange`} to='/'>
+      <Link className={`${HeaderPageStyle.buttonReturn} orange`} to='/'>
         Return
-      </NavLink>
+      </Link>
     </header>
   )
 }

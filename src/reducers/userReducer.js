@@ -1,15 +1,13 @@
 import {
-  FETCH_USERS,
+  AXIOS_USERS,
   DELETE_USER,
   ADD_USER,
   BEGIN_LOAD_FETCH_USERS,
   ERROR_LOAD_FETCH_USERS,
-  FILTER_SEARCH_USER,
 } from '../actions/types'
 
 const initialState = {
   users: [],
-  filtredUsers: [],
   loading: true,
   error: false,
 }
@@ -21,11 +19,10 @@ export default function (state = initialState, action) {
         ...state,
         loading: true,
       }
-    case FETCH_USERS:
+    case AXIOS_USERS:
       return {
         ...state,
         users: action.payload,
-        filtredUsers: action.payload,
         loading: false,
         error: false,
       }
@@ -37,20 +34,15 @@ export default function (state = initialState, action) {
         error: action.payload,
       }
     case DELETE_USER:
+      console.log('reducer data', action.payload)
       return {
         ...state,
-        users: state.users.filter((user) => user.id !== action.payload)
+        users: state.users.filter((user) => user._id !== action.payload)
       }
     case ADD_USER:
       return {
         ...state,
         users: [action.payload, ...state.users]
-      }
-    case FILTER_SEARCH_USER:
-      console.log(state.filtredUsers)
-      return {
-        ...state,
-        filtredUsers: state.users.filter((user) => user.name.toLowerCase().includes(action.payload.toLowerCase().trim()))
       }
     default:
       return state;

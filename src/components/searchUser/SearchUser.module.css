@@ -1,7 +1,7 @@
 .container  {
   background-color: rgb(50, 61, 61);
   padding: 20px;
-  border: solid;
+  margin: 8px;
 }
 
 .header {
@@ -15,3 +15,4 @@
   background-color: rgba(0, 0, 0, 0.527);
   padding: 10px;
 }
+

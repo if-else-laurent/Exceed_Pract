@@ -1,6 +1,6 @@
 import React from 'react';
 import UserAvatar from '../userAvatar/UserAvatar.jsx'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import HeaderCardStyle from './HeaderCard.module.css';
 import { useDispatch } from 'react-redux';
 import { deleteUser } from '../../actions/userActions';
@@ -22,10 +22,10 @@ const Header = (props) => {
           <div>
             email: <a className='orange' href='#' >{user.email}</a>
           </div>
-          <NavLink className='orange' to={'/' + user.id}>
+          <Link className='orange' to={'/' + user._id}>
             More
-          </NavLink>
-          <button className={`${HeaderCardStyle.deleteButton} orange`} to='/' onClick={() => dispatch(deleteUser(user.id))}>
+          </Link>
+          <button className={`${HeaderCardStyle.deleteButton} orange`} to='/' onClick={() => dispatch(deleteUser(user._id))}>
             delete
           </button>
         </div>

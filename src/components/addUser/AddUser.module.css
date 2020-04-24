@@ -1,7 +1,7 @@
 .container {
   background-color: rgb(50, 61, 61);
   padding: 20px;
-  border: solid;
+  margin: 8px;
 }
 
 .header    {
@@ -29,7 +29,8 @@
 
 .button:hover {
   background-color: orange;
-  color:  black;
+  color: black;
+  border: solid orange;
 }
 
 input {

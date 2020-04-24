@@ -27,3 +27,8 @@
   right: 12px;
   top: 10px;
 }
+
+.deleteButton:hover {
+  background-color: orange;
+  color: black;
+}

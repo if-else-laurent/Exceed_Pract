@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchUser from '../searchUser/SearchUser';
 import UserCard from '../userCard/UserCard';
 import NotFound from '../notFound/NotFound';
 import AddUser from '../addUser/AddUser';
+// import Loading from '../loading/Loading';
+
 import UserListStyle from './UserList.module.css';
+
+import { connect } from 'react-redux';
+import { axiosUsers } from '../../actions/userActions';
 
 
 const UserList = (props) => {
-  const { filtredUsers } = props;
+  const { users, loading } = props;
+
+  const [resSearch, setResSearch] = useState('');
+
+  const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
+
+
 
   return (
     <div>
-      <SearchUser />
+      <SearchUser setResSearch={setResSearch} />
       <AddUser />
       <div className={UserListStyle.container}>
         {/* {users ? (
@@ -19,13 +30,9 @@ const UserList = (props) => {
             filtredUsers.map((user) => <UserCard key={user.id} user={user} />)
           ) : (<NotFound />)
         ) : (<p> Loading... </p>)} */}
-        {/* {users ? (
-          filtredUsers.length ? (
-            filtredUsers.map((user) => <UserCard key={user.id} user={user} />)
-          ) : (<NotFound />)
-        ) : (<p> Loading... </p>)} */}
 
-        {filtredUsers.length ? (filtredUsers.map((user) => <UserCard key={user.id} user={user} />)) : (<NotFound />)}
+
+        {filtredUsers.length ? (filtredUsers.map((user) => <UserCard key={user._id} user={user} />)) : (<NotFound />)}
       </div>
     </div>
   )
@@ -33,4 +40,13 @@ const UserList = (props) => {
 
 
 
-export default UserList;
+// export default UserList;
+
+const mapStateToProps = (state) => ({
+  users: state.userReducer.users,
+  loading: state.userReducer.loading,
+})
+
+const mapActions = { axiosUsers };
+
+export default connect(mapStateToProps, mapActions)(UserList);

@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import UserPage from './pages/userPage/UserPage';
 import UsersPage from './pages/usersPage/UsersPage';
 
 import { connect } from 'react-redux';
-import { fetchUsers, } from '../src/actions/userActions';
+import { axiosUsers, } from '../src/actions/userActions';
 
 
 
 const App = (props) => {
-  const { users, filtredUsers, fetchUsers } = props;
+  const { axiosUsers } = props;
 
-  useEffect(() => {                                             // Разобраться с этим блоком
-    fetchUsers();
+  useEffect(() => {
+    axiosUsers();
   }, []);
 
-  // const [resSearch, setResSearch] = useState('');
-
-  // const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
 
   return (
     <Router>
-      <div className='mainPage'>
-        <Route exact path='/' render={(props) => <UsersPage {...props} filtredUsers={filtredUsers} />} />
-        <Route exact path='/:id' render={(props) => <UserPage {...props} users={users} />} />
+      <div className='app'>
+        <div className='mainPage'>
+          <Route exact path='/' render={(props) => <UsersPage {...props} />} />
+          <Route exact path='/:id' render={(props) => <UserPage {...props} />} />
+        </div>
       </div>
     </Router>
   )
@@ -32,10 +31,8 @@ const App = (props) => {
 
 const mapStateToProps = (state) => ({
   users: state.userReducer.users,
-  loading: state.userReducer.loading,
-  filtredUsers: state.userReducer.filtredUsers,
 })
 
-const mapActions = { fetchUsers };
+const mapActions = { axiosUsers };
 
 export default connect(mapStateToProps, mapActions)(App); // Connect(props, откуда props)(component который подключаеться)

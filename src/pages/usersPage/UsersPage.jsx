@@ -4,11 +4,12 @@ import UserList from '../../components/userList/UserList';
 const UsersPage = (props) => {
   const {
     filtredUsers,
+    users,
   } = props;
 
 
   return (
-    <UserList filtredUsers={filtredUsers} />
+    <UserList filtredUsers={filtredUsers} users={users} />
   )
 }
 
