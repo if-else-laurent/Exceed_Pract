@@ -8,6 +8,8 @@ import { useEffect } from 'react';
 
 
 const AddUser = (props) => {
+  const { token } = props;
+
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -20,7 +22,7 @@ const AddUser = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name && email) {
-      dispatch(addUser({ name, username, email }));
+      dispatch(addUser({ name, username, email }, token));
       // window.location = '/';  //Перенаправляет на homePage( '/' )
     }
     return

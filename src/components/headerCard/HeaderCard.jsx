@@ -7,7 +7,7 @@ import { deleteUser } from '../../actions/userActions';
 
 
 const Header = (props) => {
-  const { user } = props;
+  const { user, token } = props;
 
   const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const Header = (props) => {
           <Link className='orange' to={'/' + user._id}>
             More
           </Link>
-          <button className={`${HeaderCardStyle.deleteButton} orange`} to='/' onClick={() => dispatch(deleteUser(user._id))}>
+          <button className={`${HeaderCardStyle.deleteButton} orange`} to='/' onClick={() => dispatch(deleteUser(user._id, token))}>
             delete
           </button>
         </div>

@@ -12,7 +12,7 @@ import { axiosUsers } from '../../actions/userActions';
 
 
 const UserList = (props) => {
-  const { users, loading } = props;
+  const { users, loading, token } = props;
 
   const [resSearch, setResSearch] = useState('');
 
@@ -21,7 +21,7 @@ const UserList = (props) => {
   return (
     <div>
       <SearchUser setResSearch={setResSearch} />
-      <AddUser />
+      <AddUser token={token} />
       <div className={UserListStyle.container}>
         {/* {users ? (
           filtredUsers.length ? (
@@ -30,7 +30,7 @@ const UserList = (props) => {
         ) : (<p> Loading... </p>)} */}
 
 
-        {filtredUsers.length ? (filtredUsers.map((user) => <UserCard key={user._id} user={user} />)) : (<NotFound />)}
+        {filtredUsers.length ? (filtredUsers.map((user) => <UserCard key={user._id} user={user} token={token} />)) : (<NotFound />)}
       </div>
     </div>
   )
@@ -43,6 +43,7 @@ const UserList = (props) => {
 const mapStateToProps = (state) => ({
   users: state.userReducer.users,
   loading: state.userReducer.loading,
+  token: state.userReducer.token,
 })
 
 const mapActions = { axiosUsers };
