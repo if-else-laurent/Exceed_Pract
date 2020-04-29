@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchUser from '../searchUser/SearchUser';
 import UserCard from '../userCard/UserCard';
 import NotFound from '../notFound/NotFound';
@@ -17,8 +17,6 @@ const UserList = (props) => {
   const [resSearch, setResSearch] = useState('');
 
   const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска
-
-
 
   return (
     <div>

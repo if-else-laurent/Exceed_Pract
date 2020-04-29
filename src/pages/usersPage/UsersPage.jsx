@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import UserList from '../../components/userList/UserList';
 
 const UsersPage = (props) => {
   const {
-    filtredUsers,
-    users,
+    axiosUsers,
+    token
   } = props;
+
+  useEffect(() => {
+    axiosUsers(token);
+  }, []);
 
 
   return (
-    <UserList filtredUsers={filtredUsers} users={users} />
+    <UserList />
   )
 }
 

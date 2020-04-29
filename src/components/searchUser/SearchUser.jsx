@@ -1,9 +1,12 @@
 import React from 'react';
 import SearchUserStyle from './SearchUser.module.css'
-import { searchUser } from '../../actions/userActions';
+import { searchUser, logOutUser } from '../../actions/userActions';
+import { useDispatch } from 'react-redux';
 
 const SearchUser = (props) => {
   const { setResSearch } = props;
+
+  const dispatch = useDispatch();
 
   return (
     <div className={SearchUserStyle.container}>
@@ -11,6 +14,7 @@ const SearchUser = (props) => {
       <div className={SearchUserStyle.inner}>
         Name: <input className='search__inner__input' type='text' onChange={(e) => setResSearch(e.target.value)} />
       </div>
+      <button className={SearchUserStyle.button} onClick={() => dispatch(logOutUser())} > Log Out </button>
     </div>
   )
 }

@@ -4,12 +4,16 @@ import {
   ADD_USER,
   BEGIN_LOAD_FETCH_USERS,
   ERROR_LOAD_FETCH_USERS,
+  REGISTER_USER,
+  LOGIN_USER,
+  LOGOUT_USER,
 } from '../actions/types'
 
 const initialState = {
   users: [],
   loading: true,
   error: false,
+  token: null,
 }
 
 export default function (state = initialState, action) {
@@ -34,15 +38,30 @@ export default function (state = initialState, action) {
         error: action.payload,
       }
     case DELETE_USER:
-      console.log('reducer data', action.payload)
       return {
         ...state,
-        users: state.users.filter((user) => user._id !== action.payload)
+        users: action.payload
+        // users: state.users.filter((user) => user._id !== action.payload)
       }
     case ADD_USER:
       return {
         ...state,
-        users: [action.payload, ...state.users]
+        users: action.payload
+        // users: [action.payload, ...state.users]
+      }
+    case REGISTER_USER:
+      return {
+        ...state
+      }
+    case LOGIN_USER:
+      return {
+        ...state,
+        token: action.payload
+      }
+    case LOGOUT_USER:
+      return {
+        ...state,
+        token: null
       }
     default:
       return state;

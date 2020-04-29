@@ -4,6 +4,9 @@ import {
   ADD_USER,
   BEGIN_LOAD_FETCH_USERS,
   ERROR_LOAD_FETCH_USERS,
+  REGISTER_USER,
+  LOGIN_USER,
+  LOGOUT_USER,
 } from './types'
 import axios from 'axios';
 
@@ -25,12 +28,16 @@ import axios from 'axios';
 //   }
 // };
 
-export function axiosUsers() {
+
+export function axiosUsers(token) {
   return async dispatch => {
     try {
+      const headers = { authToken: token }
+      const method = 'GET'
+      const body = null
       dispatch({ type: BEGIN_LOAD_FETCH_USERS });
-      const response = await getData('http://localhost:5000/');
-      console.log(response)
+      const response = await axios.get('http://localhost:5000/', { method, body, headers });
+      console.log('data', response)
       dispatch({
         type: AXIOS_USERS,
         payload: response.data.reverse(),
@@ -42,10 +49,7 @@ export function axiosUsers() {
   }
 };
 
-async function getData(url) {
-  const res = await axios.get(url);
-  return res;
-}
+
 
 // https://jsonplaceholder.typicode.com/users
 // http://localhost:5000/
@@ -63,13 +67,14 @@ async function getData(url) {
 export const deleteUser = (id) => {
   return async dispatch => {
     try {
-      await axios.delete('http://localhost:5000/' + id)
+      const res = await axios.delete('http://localhost:5000/' + id)
       dispatch({
         type: DELETE_USER,
-        payload: id
+        payload: res.data.reverse()
       })
     }
     catch (err) {
+      dispatch({ type: ERROR_LOAD_FETCH_USERS, payload: err })
     }
   }
 }
@@ -83,17 +88,63 @@ export const deleteUser = (id) => {
 // }
 
 export const addUser = (newUser) => {
-  console.log(newUser)
   return async dispatch => {
     try {
-      await axios.post('http://localhost:5000/add', newUser)
+      const res = await axios.post('http://localhost:5000/add', newUser)
       dispatch({
         type: ADD_USER,
-        payload: newUser
+        payload: res.data.reverse()
       })
     }
     catch (err) {
+      dispatch({ type: ERROR_LOAD_FETCH_USERS, payload: err })
     }
 
+  }
+}
+
+
+export const registerUser = (newUser) => {
+  return async dispatch => {
+    try {
+      const res = await axios.post('http://localhost:5000/auth/register', newUser)
+      console.log(res.data)
+      dispatch({
+        type: REGISTER_USER,
+      })
+    }
+    catch (err) {
+
+    }
+  }
+}
+
+export const loginUser = (user) => {
+  return async dispatch => {
+    try {
+      const res = await axios.post('http://localhost:5000/auth/login', user)
+      console.log('actions', res)
+      dispatch({
+        type: LOGIN_USER,
+        payload: res.data
+      })
+    }
+    catch (err) {
+
+    }
+  }
+}
+
+export const logOutUser = () => {
+  return async dispatch => {
+    try {
+      dispatch({
+        type: LOGOUT_USER,
+        payload: null
+      })
+    }
+    catch (err) {
+
+    }
   }
 }

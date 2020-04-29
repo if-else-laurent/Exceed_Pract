@@ -1,15 +1,18 @@
-.container  {
+.container {
   background-color: rgb(50, 61, 61);
   padding: 20px;
   margin: 8px;
-  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 200px;
 }
 
-.header {
-  padding: 5px;
+.header    {
+  background-color: rgba(0, 0, 0, 0.527);
+  padding: 10px;
   margin-bottom: 10px;
   border-bottom: orange solid;
-  background-color: rgba(0, 0, 0, 0.527);
+  text-align: center;
 }
 
 .inner {
@@ -17,16 +20,22 @@
   padding: 10px;
 }
 
+.form {
+  display: grid;
+}
+
 .button    {
-  position: absolute;
   padding: 2px;
   text-decoration: none;
   border: solid;
-  right: 30px;
-  top: 88px;
+  right: 5px;
+  top:6px;
   color: orange;
   background-color: black;
-
+  margin-left: 10px;
+  width: 70px;
+  margin: 10px 5px;
+  position: relative;
 }
 
 .button:hover {
@@ -35,3 +44,11 @@
   border: solid orange;
 }
 
+.button_container {
+  display: inline-block;
+  margin-left: 220px;
+}
+
+input {
+  border: black solid;
+}
