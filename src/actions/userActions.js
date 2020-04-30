@@ -2,27 +2,27 @@ import {
   AXIOS_USERS,
   DELETE_USER,
   ADD_USER,
-  BEGIN_LOAD_FETCH_USERS,
-  ERROR_LOAD_FETCH_USERS,
+  BEGIN_LOAD_AXIOS_USERS,
+  ERROR_LOAD_AXIOS_USERS,
   REGISTER_USER,
   LOGIN_USER,
   LOGOUT_USER,
 } from './types'
 import axios from 'axios';
 
-// export function fetchUsers() {
+// export functioD_AXIOSUsers() {
 //   return dispatch => {
-//     dispatch({ type: BEGIN_LOAD_FETCH_USERS });
-//     fetch(`https://jsonplaceholder.typicode.com/users`)
+//     dispatch({ type: BEGIN_LOAD_AXIOS_USERS });
+//   D_AXIOS(`https://jsonplaceholder.typicode.com/users`)
 //       .then(res => res.json())
 //       .then(res =>
 //         dispatch({
-//           type: FETCH_USERS,
+//           typeD_AXIOS_USERS,
 //           payload: res
 //         })
 //       )
 //       .catch(error => {
-//         dispatch({ type: ERROR_LOAD_FETCH_USERS, payload: error })  //?????????????
+//         dispatch({ type: ERROR_LOAD_AXIOS_USERS, payload: error })  //?????????????
 //       }
 //       )
 //   }
@@ -32,19 +32,19 @@ import axios from 'axios';
 export function axiosUsers(token) {
   return async dispatch => {
     try {
-      dispatch({ type: BEGIN_LOAD_FETCH_USERS });
+      dispatch({ type: BEGIN_LOAD_AXIOS_USERS });
       const headers = { authToken: token }
-      const response = await axios.get('http://localhost:5000/', {
+      const res = await axios.get('/get', {
         headers: headers
       })
-      console.log('data', response)
+      console.log('res', res)
       dispatch({
         type: AXIOS_USERS,
-        payload: response.data.reverse(),
+        payload: res.data.reverse(),
       });
     }
     catch (err) {
-      dispatch({ type: ERROR_LOAD_FETCH_USERS, payload: err });
+      dispatch({ type: ERROR_LOAD_AXIOS_USERS, payload: err });
     }
   }
 };
@@ -69,17 +69,17 @@ export function deleteUser(id, token) {
     try {
       // const res = await axios.delete('http://localhost:5000/' + id)
       const headers = { authToken: token }
-      console.log('delete', token)
-      const res = await axios.delete('http://localhost:5000/' + id, {
+      const res = await axios.delete('/' + id, {
         headers: headers
       })
+      console.log('res', res)
       dispatch({
         type: DELETE_USER,
         payload: res.data.reverse()
       })
     }
     catch (err) {
-      dispatch({ type: ERROR_LOAD_FETCH_USERS, payload: err })
+      dispatch({ type: ERROR_LOAD_AXIOS_USERS, payload: err })
     }
   }
 }
@@ -96,7 +96,7 @@ export function addUser(newUser, token) {
   return async dispatch => {
     try {
       const headers = { authToken: token }
-      const res = await axios.post('http://localhost:5000/add', newUser, {
+      const res = await axios.post('/add', newUser, {
         headers: headers
       })
       dispatch({
@@ -105,7 +105,7 @@ export function addUser(newUser, token) {
       })
     }
     catch (err) {
-      dispatch({ type: ERROR_LOAD_FETCH_USERS, payload: err })
+      dispatch({ type: ERROR_LOAD_AXIOS_USERS, payload: err })
     }
 
   }
@@ -115,8 +115,7 @@ export function addUser(newUser, token) {
 export const registerUser = (newUser) => {
   return async dispatch => {
     try {
-      const res = await axios.post('http://localhost:5000/auth/register', newUser)
-      console.log(res.data)
+      const res = await axios.post('/auth/register', newUser)
       dispatch({
         type: REGISTER_USER,
       })
@@ -130,8 +129,7 @@ export const registerUser = (newUser) => {
 export const loginUser = (user) => {
   return async dispatch => {
     try {
-      const res = await axios.post('http://localhost:5000/auth/login', user)
-      console.log('actions', res)
+      const res = await axios.post('/auth/login', user)
       dispatch({
         type: LOGIN_USER,
         payload: res.data

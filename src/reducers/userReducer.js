@@ -2,8 +2,8 @@ import {
   AXIOS_USERS,
   DELETE_USER,
   ADD_USER,
-  BEGIN_LOAD_FETCH_USERS,
-  ERROR_LOAD_FETCH_USERS,
+  BEGIN_LOAD_AXIOS_USERS,
+  ERROR_LOAD_AXIOS_USERS,
   REGISTER_USER,
   LOGIN_USER,
   LOGOUT_USER,
@@ -18,7 +18,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case BEGIN_LOAD_FETCH_USERS:
+    case BEGIN_LOAD_AXIOS_USERS:
       return {
         ...state,
         loading: true,
@@ -30,7 +30,7 @@ export default function (state = initialState, action) {
         loading: false,
         error: false,
       }
-    case ERROR_LOAD_FETCH_USERS:
+    case ERROR_LOAD_AXIOS_USERS:
       console.log('Error load users')
       return {
         ...state,

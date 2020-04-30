@@ -14,6 +14,7 @@ import { axiosUsers } from '../../actions/userActions';
 const UserList = (props) => {
   const { users, loading, token } = props;
 
+
   const [resSearch, setResSearch] = useState('');
 
   const filtredUsers = users.filter((user) => user.name.toLowerCase().includes(resSearch.toLowerCase().trim()));  //Фильтрация поиска

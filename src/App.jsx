@@ -12,8 +12,6 @@ import AuthPage from './pages/authPage/AuthPage';
 
 const App = (props) => {
   const { axiosUsers, users, token } = props;
-  console.log('token', token)
-
 
   if (!!token) {
     return (
